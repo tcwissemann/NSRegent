@@ -1,0 +1,45 @@
+1). Create virtual environment inside of app directory:
+	a). python -m venv .venv
+	b). Mac: source .venv/bin/activate
+	c). Windows CMD: .\.venv\Scripts\activate.bat
+	
+2). Install Django:
+	a). python -m pip install Django
+	b). python -m django --version
+
+3). Create a project:
+	a). mkdir source (this name doesn't matter)
+	b). django-admin startproject config source
+
+4). Ensure everything works:
+	a). from the 'source' directory: python manage.py runserver
+	b). ignore warning about unapplied db migrations for now
+
+5). Create an app:
+	a). python manage.py startapp core - for reusable bits
+	b). in source|config|settings.py, append INSTALLED_APPS with 'core'
+
+6). Create urls.py inside of source|core|
+
+7). Update views.py (core) as such:
+	a). from django.shortcuts import render, HttpResponse
+
+	# Create your views here.
+	def home(request):
+    		return HttpResponse("hello world!")
+
+8). Connect view to application with url
+	a). touch urls.py (core)
+	b). from django.urls import path
+	from . import views
+
+	urlpatterns = [
+    		path("", views.home, name="home")
+	]
+
+9). Connect url to sub app core.
+	a). touch urls.py (config)
+	b). add "path('', include('core.urls'))," to [urlpatterns]
+
+10). Run & Test:
+	a) python manage.py runserver
