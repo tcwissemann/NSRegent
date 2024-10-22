@@ -1,5 +1,0 @@
-1). Python v >= 3.12.5 with pip up to date.
-
-2). Windows(CMD) | Mac(Zsh)
-
-
