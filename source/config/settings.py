@@ -61,7 +61,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,7 +155,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_CHANGE_EMAIL = True
 #attempts to make changes to the account will notify a user
 ACCOUNT_EMAIL_NOTIFICATIONS = True
-#when user clicks link from email, account will be confirmed in the eyes of allauth
+#when user clicks link from email, account will be confirmed in the eyes of allauth and login will happen
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 

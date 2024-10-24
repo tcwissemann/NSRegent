@@ -31,8 +31,8 @@
                     </ul>
                 </li>
             {% else %}
-                <li><a href="#" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white">Login</a></li>
-                <li><a href="#" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white">Sign Up</a></li>
+                <li><a href="{% url 'account_login' %}" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white">Login</a></li>
+                <li><a href="{% url 'account_signup' %}" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white">Sign Up</a></li>
             {% endif %}
         </ul>
         <!-- Mobile Menu Button -->
@@ -59,10 +59,10 @@
                 <li class="p-2"><a href="{% url 'dashboard' %}" class="w-full text-neutral-600 focus:underline dark:text-neutral-300">Dashboard</a></li>
                 <li class="p-2"><a href="#" class="w-full text-neutral-600 focus:underline dark:text-neutral-300">Subscription</a></li>
                 <li class="p-2"><a href="#" class="w-full text-neutral-600 focus:underline dark:text-neutral-300">Settings</a></li>
-                <li class="p-2"><a href="#" class="w-full text-neutral-600 focus:underline dark:text-neutral-300">Sign Out</a></li>
+                <li class="p-2"><a href="{% url 'account_logout' %}" class="w-full text-neutral-600 focus:underline dark:text-neutral-300">Sign Out</a></li>
             {% else %}
-                <li class="py-4"><a href="#" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-300">Login</a></li>
-                <li class="py-4"><a href="#" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-300">Sign Up</a></li>
+                <li class="py-4"><a href="{% url 'account_login' %}" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-300">Login</a></li>
+                <li class="py-4"><a href="{% url 'account_signup' %}" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-300">Sign Up</a></li>
             {% endif %}
         </ul>
     </nav>
