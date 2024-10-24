@@ -142,7 +142,40 @@ AUTHENTICATION_BACKENDS = [
 
 #Just for testing (sends emails to console)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+#sets primary auth method to email
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#requires email for login
 ACCOUNT_EMAIL_REQUIRED = True
+#requires email link to be clicked to create account
+#email links last 3 days by default
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+#limits max number of emails to 1, and allows a temp email for changing account holder
+ACCOUNT_CHANGE_EMAIL = True
+#attempts to make changes to the account will notify a user
+ACCOUNT_EMAIL_NOTIFICATIONS = True
+#when user clicks link from email, account will be confirmed in the eyes of allauth
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
+
+#testing, should redirect here after successfully creating account
+LOGIN_REDIRECT_URL = '/dashboard/'
+# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/dashboard/'
+
+#"Specifies whether or not reauthentication is required before the user can alter his account."
+ACCOUNT_REAUTHENTICATION_REQUIRED=True
+
+#Spam protection testing
+# ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD
+
+# ACCOUNT_FORMS = {
+#     'add_email': 'allauth.account.forms.AddEmailForm',
+#     'change_password': 'allauth.account.forms.ChangePasswordForm',
+#     'confirm_login_code': 'allauth.account.forms.ConfirmLoginCodeForm',
+#     'login': 'allauth.account.forms.LoginForm',
+#     'request_login_code': 'allauth.account.forms.RequestLoginCodeForm',
+#     'reset_password': 'allauth.account.forms.ResetPasswordForm',
+#     'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
+#     'set_password': 'allauth.account.forms.SetPasswordForm',
+#     'signup': 'allauth.account.forms.SignupForm',
+#     'user_token': 'allauth.account.forms.UserTokenForm',
+# }
