@@ -81,7 +81,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -182,3 +181,5 @@ ACCOUNT_REAUTHENTICATION_REQUIRED=True
 #     'signup': 'allauth.account.forms.SignupForm',
 #     'user_token': 'allauth.account.forms.UserTokenForm',
 # }
+
+# ACCOUNT_DEFAULT_HTTP_PROTOCOL

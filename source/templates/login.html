@@ -1,10 +1,6 @@
-{% extends "base/app.html" %}
-{% block title %}Login{% endblock %}
 
-{% block content %}
     <article class="group flex rounded-md w-full max-w-xs flex-col overflow-hidden border border-neutral-300 bg-neutral-50 p-6 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
         <form class="space-y-8" method="POST">
-            {{ form.hidden_tag() }}
             <div class="space-y-2">
                 <h3 class="text-xl text-balance md:text-2xl font-bold text-neutral-900 dark:text-white">Log In</h3>
                 <p class="mt-2 text-pretty text-xs font-medium">Welcome back!</p>
@@ -48,9 +44,10 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
                             </svg>
                         </div>
-                        {{ form.remember_password.label(class="flex cursor-pointer items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 [&:has(input:checked)]:text-neutral-900 dark:[&:has(input:checked)]:text-white [&:has(input:disabled)]:opacity-75 [&:has(input:disabled)]:cursor-not-allowed")}}
+                        <input type="checkbox" class="flex cursor-pointer items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 [&:has(input:checked)]:text-neutral-900 dark:[&:has(input:checked)]:text-white [&:has(input:disabled)]:opacity-75 [&:has(input:disabled)]:cursor-not-allowed" />
+                        {{ form.remember_password.label(class="")}}
                     </label>
-                    {{ form.submit(class="cursor-pointer mt-12 w-full whitespace-nowrap bg-black px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white rounded-md") }}
+                    <button class="cursor-pointer mt-12 w-full whitespace-nowrap bg-black px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white rounded-md">Submit</button>
                     <div class="pt-4">
                         <small class="pl-0.5"><a href="{{ url_for('auth.reset_request') }}" class="font-medium text-black underline-offset-2 hover:underline focus:underline focus:outline-none dark:text-white">Forgot Password</a></small>
                     </div>
@@ -58,4 +55,3 @@
             </div>
         </form>
     </article>
-{% endblock %}
